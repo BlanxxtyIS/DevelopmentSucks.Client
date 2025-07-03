@@ -6,18 +6,35 @@ export default function ChaptersList() {
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);
 
-        async function loadChapters(e) {
+    const accessToken = localStorage.getItem('accessToken');
+
+    async function loadChapters(e) {
         e.preventDefault();
         setLoading(true);
         setError(null);
         setSuccess(false);
 
         try {
-            const response = await fetch('http://localhost:5231/api/chapters', { method: 'GET', mode: 'cors' });
+            const response = await fetch('https://localhost:7056/api/chapters', { 
+                method: 'GET', 
+                mode: 'cors' ,
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`,
+                    'Content-Type': 'application/json',
+                }
+            });
+
             if (!response.ok) {
-                const data = await response.json();
-                throw new Error(data.message || 'Ошибка загрузки Глав');
+                let errorMessage = 'Ошибка загркузки Глав';
+                try {
+                    const errorData = await response.json();
+                    errorMessage = errorData.message || errorMessage;
+                } catch {
+
+                }
+                throw new Error(errorMessage);
             }
+            
             const data = await response.json();
             setChapters(data);
             setSuccess(true);

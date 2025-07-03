@@ -17,14 +17,14 @@ export default function LoginPage() {
     setSuccess(false);
 
     try {
-      const response = await fetch('http://localhost:5231/api/auth/login', {
+      const response = await fetch('https://localhost:7056/api/auth/login', {
         method: 'POST',
         mode: 'cors', // явно указываем режим CORS
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }),
-        redirect: 'follow' // или 'error' если не ожидаете редиректов
+        credentials: 'include',
+        body: JSON.stringify({ username, password })
     });
 
       if (!response.ok) {
@@ -36,12 +36,11 @@ export default function LoginPage() {
 
       // Сохраняем accessToken в localStorage
       localStorage.setItem('accessToken', data.accessToken);
-      localStorage.setItem('refreshToken', data.refreshToken);
 
       setSuccess(true);
       console.log('Успешный логин', data);
 
-      window.location.href = '/';
+      navigate('/');
 
     } catch (err) {
       setError(err.message);
@@ -52,7 +51,7 @@ export default function LoginPage() {
 
   return (
     <div style={{ maxWidth: 400, margin: '50px auto', padding: 20, border: '1px solid #ccc' }}>
-      <h2>Вход</h2>
+      <h2>Вход!</h2>
       <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: 10 }}>
           <label>Username</label><br />

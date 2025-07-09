@@ -23,7 +23,7 @@ export default function LoginPage() {
         headers: {
             'Content-Type': 'application/json',
         },
-        credentials: 'include',
+        credentials: 'include', //позволяет браузеру автоматически отправлять и принимать куки между клиентом и сервером
         body: JSON.stringify({ username, password })
     });
 

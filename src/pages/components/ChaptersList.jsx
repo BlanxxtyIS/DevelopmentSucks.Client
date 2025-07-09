@@ -24,8 +24,11 @@ export default function ChaptersList() {
                 }
             });
 
-            if (!response.ok) {
+            if (!response.ok) { 
                 let errorMessage = 'Ошибка загркузки Глав';
+                if (response.status == 401) {
+                    errorMessage = 'Необходимо авторизоваться';
+                }
                 try {
                     const errorData = await response.json();
                     errorMessage = errorData.message || errorMessage;

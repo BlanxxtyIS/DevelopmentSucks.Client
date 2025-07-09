@@ -12,7 +12,7 @@ export default function RegisterPage() {
     const navigate = useNavigate();
 
     async function handleSubmit(e) {
-        e.preventDefault();
+        e.preventDefault(); //отключает перезагрузку страницы при отправке формы
         setLoading(true);
         setError(null);
         setSuccess(false);

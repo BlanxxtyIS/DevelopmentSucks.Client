@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CoursesList from './components/CoursesList';
 import ChaptersList from './components/ChaptersList';
+import LessonPage from './components/LessonPage';
+
 
 export default function AdminPage() {
     return (
@@ -10,6 +12,9 @@ export default function AdminPage() {
             <CoursesList />
             <hr />
             <ChaptersList />
+            <hr />
+            <LessonPage />
+            
         </div>
     )
 }

@@ -4,8 +4,8 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
 import AdminPage from './pages/AdminPage';
-import One from './pages/pokaHTMLtest/One';
-import Two from './pages/pokaHTMLtest/Two';
+import CurrentLessonPage from './pages/components/CurrentLessonPage';
+
 
 function App() {
   return (
@@ -15,8 +15,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path='/' element={<HomePage />} />
         <Route path='/admin' element={<AdminPage />} />
-        <Route path='/one' element={<One />} />
-        <Route path='/two' element={<Two />} />
+        <Route path='/lessons/:order?' element={<CurrentLessonPage />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,59 @@
+import React, {useEffect, useState} from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import * as lessonsApi from "../../api/lessonsApi";
+
+export default function CurrentLessonPage() {
+    const [lessons, setLessons] = useState([]);
+    const {order} = useParams();
+    const [currentOrder, setCurrentOrder] = useState(Number(order) || 0);
+    const navigate = useNavigate();
+
+    const token = localStorage.getItem('accessToken');
+
+    useEffect(() => {
+        async function  loadLessons() {
+            try {
+                const data = await lessonsApi.getAllLessons(token);
+                setLessons(data);
+            } catch (err) {
+                console.log('Ошибка при загрузке');
+            }
+        }
+
+        loadLessons();
+    }, [token]);
+
+    useEffect(() => {
+        // Обновлять currentOrder, если меняется параметр в URL
+        setCurrentOrder(Number(order) || 0);
+    }, [order]);
+
+    if (lessons.length === 0) return <p>Уроков пока нет</p>;
+
+    const currentLesson = lessons[currentOrder];
+
+    return (
+        <div>
+            <h2>{currentLesson.title}</h2>
+            <div dangerouslySetInnerHTML={{__html: currentLesson.content}} />
+            <p><em>Глава ID: {currentLesson.id}</em></p>
+
+            <div style={{marginTop: "1rem"}}>
+                <button 
+                    onClick={() => setCurrentOrder((prev) => prev - 1)}
+                    disabled={currentOrder === 0}
+                >
+                    ⬅️ Назад
+                </button>
+
+                <button
+                    onClick={() => setCurrentOrder((next) => next + 1)}
+                    disabled={currentOrder === lessons.length - 1}
+                    style={{ marginLeft: "1rem" }}
+                > 
+                    Далее ➡️
+                </button>
+            </div>
+        </div>
+    )
+}

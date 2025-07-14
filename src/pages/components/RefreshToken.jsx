@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-export default function CoursesList() {
+export default function RefreshToken() {
     const [courses, setCourses] = useState([]);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);

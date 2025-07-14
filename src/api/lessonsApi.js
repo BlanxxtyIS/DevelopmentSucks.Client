@@ -1,6 +1,6 @@
 const BASE_URL = 'https://localhost:7056/api/lessons';
 
-export async function GetAllLessons(token) {
+export async function getAllLessons(token) {
     const response = await fetch(BASE_URL, {
         headers: {
                 'Authorization': `Bearer ${token}`
@@ -9,7 +9,7 @@ export async function GetAllLessons(token) {
     });
 
     if (!response.ok) {
-        throw new Error('Ошибка при загрузке курсов');
+        throw new Error('Ошибка при загрузке уроков');
     }
     return response.json();
 }
@@ -23,7 +23,7 @@ export async function addLesson(lesson) {
     });
 
     if (!response.ok) {
-        throw new Error('Ошибка при добавлении курса');
+        throw new Error('Ошибка при добавлении урока');
     }
     return response.json();
 }
@@ -38,7 +38,7 @@ export async function editLesson(lesson) {
 
     if (!response.ok) {
         console.log(response.status);
-        throw new Error('Ошибка при редактировании курса');
+        throw new Error('Ошибка при редактировании урока');
     }
     return;
 }
@@ -52,7 +52,7 @@ export async function deleteLesson(id) {
 
     if (!response.ok) {
         console.log(response.status);
-        throw new Error('Ошибка при удалении курса');
+        throw new Error('Ошибка при удалении урока');
     }
     return;
 }

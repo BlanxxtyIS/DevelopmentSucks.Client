@@ -19,7 +19,7 @@ export default function LessonPage() {
 
     async function loadLessons() {
         try {
-            const data = await lessonsApi.GetAllLessons(token);
+            const data = await lessonsApi.getAllLessons(token);
             setLessons(data);
         } catch (err) {
             console.error('Ошибка загрузки уроков:', err.message);
@@ -130,7 +130,6 @@ export default function LessonPage() {
                             <strong>{lesson.title}</strong> (#{lesson.order})<br />
                             {lesson.content}<br />
                             <em>Глава ID: {lesson.chapterId}</em>
-                            <br />
                             <button onClick={() => handleEdit(lesson)}>✏️ Редактировать</button>
                             <button onClick={() => handleDelete(lesson.id)}>🗑️ Удалить</button>
                         </li>

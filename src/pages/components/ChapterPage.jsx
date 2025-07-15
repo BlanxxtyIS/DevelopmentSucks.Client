@@ -26,7 +26,7 @@ export default function ChapterPage() {
     }
 
     async function handleSubmit(e) {
-        e.preventDefault();
+        e.preventDefault(); //Не перезагружает страницу
         try {
             if (editingChapter) {
                 await chaptersApi.editChapter({...formData, id: editingChapter.id}, token);

@@ -25,6 +25,7 @@ export async function addLesson(lesson) {
     if (!response.ok) {
         throw new Error('Ошибка при добавлении урока');
     }
+    
     return response.json();
 }
 

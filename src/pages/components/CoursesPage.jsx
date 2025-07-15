@@ -81,11 +81,11 @@ export default function CoursesPage() {
                     required
                 /> <br/>
 
-                <button type="submit">
+                <button className='customButton' type="submit">
                     {edititngCourse ? 'Сохранить изменения' : 'Добавить'}
                 </button>
                 {edititngCourse && (
-                    <button type="button" onClick={() => {
+                    <button className='customButton' type="button" onClick={() => {
                         setEditingCourse(null);
                         setFormData({title: '', description: ''});
                     }}>
@@ -103,8 +103,8 @@ export default function CoursesPage() {
                     {courses.map((course) => (
                         <li key={course.id}>
                             <strong>id : {course.id} ||| {course.title}</strong> (#{course.description})<br />
-                            <button onClick={() => handleEdit(course)}>✏️ Редактировать</button>
-                            <button onClick={() => handleDelete(course.id)}>🗑️ Удалить</button>
+                            <button className='customButton' onClick={() => handleEdit(course)}>✏️ Редактировать</button>
+                            <button className='customButton' onClick={() => handleDelete(course.id)}>🗑️ Удалить</button>
                         </li>
                     ))}
                 </ul>

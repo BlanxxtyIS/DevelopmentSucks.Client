@@ -40,6 +40,7 @@ export default function CurrentLessonPage() {
 
             <div style={{marginTop: "1rem"}}>
                 <button 
+                    className='customButton'
                     onClick={() => setCurrentOrder((prev) => prev - 1)}
                     disabled={currentOrder === 0}
                 >
@@ -47,6 +48,7 @@ export default function CurrentLessonPage() {
                 </button>
 
                 <button
+                    className='customButton'
                     onClick={() => setCurrentOrder((next) => next + 1)}
                     disabled={currentOrder === lessons.length - 1}
                     style={{ marginLeft: "1rem" }}

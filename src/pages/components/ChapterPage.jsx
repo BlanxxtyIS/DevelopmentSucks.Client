@@ -92,14 +92,18 @@ export default function ChapterPage() {
                     required
                 /> <br />
 
-                <button type="submit">
+                <button 
+                    className='customButton'
+                    type="submit">
                     {editingChapter ? 'Сохранить изменения' : 'Добавить'}
                 </button>
                 {editingChapter && (
-                    <button type="button" onClick={() => {
-                        setEditingChapter(null);
-                        setFormData({title: '', order: null, courseId: ''});
-                    }}>
+                    <button 
+                        className='customButton'
+                        type="button" onClick={() => {
+                            setEditingChapter(null);
+                            setFormData({title: '', order: null, courseId: ''});
+                        }}>
                         Отмена
                 </button>
                 )}
@@ -114,8 +118,12 @@ export default function ChapterPage() {
                     {chapters.map((chapter) => (
                         <li key={chapter.id}>
                             <string>{chapter.title}</string>
-                            <button onClick={() => handleEdit(chapter)}>✏️ Редактировать</button>
-                            <button onClick={() => hanldeDelete(chapter.id)}>🗑️ Удалить</button>
+                            <button 
+                                className='customButton' 
+                                onClick={() => handleEdit(chapter)}>✏️ Редактировать</button>
+                            <button 
+                                className='customButton' 
+                                onClick={() => hanldeDelete(chapter.id)}>🗑️ Удалить</button>
                         </li>
                     ))}
                 </ul>

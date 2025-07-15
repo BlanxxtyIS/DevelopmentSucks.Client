@@ -5,7 +5,7 @@ import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
 import AdminPage from './pages/AdminPage';
 import CurrentLessonPage from './pages/components/CurrentLessonPage';
-
+import './styles/styles.css';
 
 function App() {
   return (

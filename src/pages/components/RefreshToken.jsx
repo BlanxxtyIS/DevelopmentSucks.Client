@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import '../../styles/styles.css';
 
 export default function RefreshToken() {
     const [courses, setCourses] = useState([]);
@@ -38,7 +39,7 @@ export default function RefreshToken() {
 
     return (
         <div>
-            <button onClick={tryRefreshToken}>Обновить токен</button>
+            <button className='customButton' onClick={tryRefreshToken}>Обновить токен</button>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             {success && <p style={{ color: 'green' }}>Токен успешно обновлен</p>}
         </div>

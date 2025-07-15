@@ -1,0 +1,38 @@
+body {
+    color: #5D6063; /* приятный серый */
+    font-size: 18px;
+    padding-left: 25%;
+    margin-right: 25%;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica", "Arial", sans-serif;
+    text-align: center;
+}
+
+a {
+    text-decoration: none; /* ссылки не подчеркиваются */
+}
+
+p {
+    font-size: 1.1em;
+    padding: 10px;
+}
+
+.customButton {
+  color: #5D6063;
+  background-color: lightgreen;
+  font-weight: bold;
+  padding: 12px;
+  text-align: center;
+  border: 2px solid #5D6063;
+  border-radius: 5px;
+}

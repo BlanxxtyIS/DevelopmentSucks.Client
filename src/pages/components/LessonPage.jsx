@@ -105,13 +105,17 @@ export default function LessonPage() {
                     required
                 />
                 <br />
-                <button type="submit">
-                    {editingLesson ? 'Сохранить изменения' : 'Добавить'}
+                <button 
+                    className='customButton'
+                    type="submit">
+                        {editingLesson ? 'Сохранить изменения' : 'Добавить'}
                 </button>
                 {editingLesson && (
-                    <button type="button" onClick={() => {
-                        setEditingLesson(null);
-                        setFormData({ title: '', content: '', order: 1, chapterId: '' });
+                    <button 
+                        className='customButton'
+                        type="button" onClick={() => {
+                            setEditingLesson(null);
+                            setFormData({ title: '', content: '', order: 1, chapterId: '' });
                     }}>
                         Отмена
                     </button>
@@ -130,8 +134,12 @@ export default function LessonPage() {
                             <strong>{lesson.title}</strong> (#{lesson.order})<br />
                             {lesson.content}<br />
                             <em>Глава ID: {lesson.chapterId}</em>
-                            <button onClick={() => handleEdit(lesson)}>✏️ Редактировать</button>
-                            <button onClick={() => handleDelete(lesson.id)}>🗑️ Удалить</button>
+                            <button 
+                                className='customButton'
+                                onClick={() => handleEdit(lesson)}>✏️ Редактировать</button>
+                            <button 
+                                className='customButton'
+                                onClick={() => handleDelete(lesson.id)}>🗑️ Удалить</button>
                         </li>
                     ))}
                 </ul>

@@ -1,11 +1,14 @@
 body {
+    margin: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #5D6063; /* приятный серый */
-    font-size: 18px;
-    line-height: 1.6;
-    background-color: #ffffff;
-    max-width: 800px;
-    margin: 0 auto;
+    background: #fff;
+}
+
+.layout-content {
+  max-width: 800px;
+  margin: 80px auto 40px auto; /* 80px — отступ под Header */
+  padding: 0 20px;
 }
 
 h1 {

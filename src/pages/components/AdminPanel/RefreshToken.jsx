@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import '../../styles/styles.css';
+import '../../../styles/styles.css'
 
 export default function RefreshToken() {
     const [courses, setCourses] = useState([]);

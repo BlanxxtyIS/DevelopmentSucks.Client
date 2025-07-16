@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import RefreshToken from './components/RefreshToken';
-import LessonPage from './components/LessonPage';
-import CoursesPage from './components/CoursesPage';
-import ChapterPage from './components/ChapterPage';
+import RefreshToken from './components/AdminPanel/RefreshToken';
+import LessonPage from './components/AdminPanel/LessonPage';
+import CoursesPage from './components/AdminPanel/CoursesPage';
+import ChapterPage from './components/AdminPanel/ChapterPage';
 
 export default function AdminPage() {
     return (

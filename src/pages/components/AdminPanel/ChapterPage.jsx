@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import * as chaptersApi from '../../api/chaptersApi'
+import * as chaptersApi from '../../../api/chaptersApi'
 
 export default function ChapterPage() {
     const [chapters, setChapters] = useState([]);

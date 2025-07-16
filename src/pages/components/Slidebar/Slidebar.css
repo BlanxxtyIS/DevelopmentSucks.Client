@@ -2,11 +2,12 @@
   position: fixed;
   top: 60px;
   left: 0;
-  width: 200px;
   height: calc(100vh - 60px);
-  padding: 20px;
+  width: 220px;
   border-right: 1px solid #ddd;
+  padding: 20px;
   box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .sidebar ul {
@@ -16,13 +17,22 @@
 }
 
 .sidebar li {
-  margin: 15px 0;
+  margin-bottom: 12px;
 }
 
-.sidebar a {
+.sidebar a, .sidebar button {
+  display: inline-block;
+  width: 100%;
   text-decoration: none;
   color: #3273dc;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 6px 4px;
+  cursor: pointer;
 }
-.sidebar a:hover {
+
+.sidebar a:hover,
+.sidebar button:hover {
   text-decoration: underline;
 }

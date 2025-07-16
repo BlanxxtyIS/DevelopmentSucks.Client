@@ -29,7 +29,7 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <Header user={user} onLogin={handleLogin} onLogout={handleLogout} />
+      <Header user={token} onLogin={handleLogin} onLogout={handleLogout} />
       <Sidebar lessons={lessons} />
       <main className="layout-content">
         {children}

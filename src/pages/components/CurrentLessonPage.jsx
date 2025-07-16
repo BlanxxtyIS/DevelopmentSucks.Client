@@ -34,7 +34,7 @@ export default function CurrentLessonPage() {
 
     return (
         <div>
-            <h2>{currentLesson.title}</h2>
+            <h1>{currentLesson.title}</h1>
             <div dangerouslySetInnerHTML={{__html: currentLesson.content}} />
             <p><em>Глава ID: {currentLesson.id}</em></p>
 

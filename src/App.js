@@ -5,17 +5,29 @@ import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
 import AdminPage from './pages/AdminPage';
 import CurrentLessonPage from './pages/components/CurrentLessonPage';
+import Layout from './pages/components/Layout/Layout';
 import './styles/styles.css';
 
-function App() {
+function App() {  
   return (
     <Router>
       <Routes>
+        {/* Без Layout */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path='/' element={<HomePage />} />
-        <Route path='/admin' element={<AdminPage />} />
-        <Route path='/lessons/:order?' element={<CurrentLessonPage />} />
+
+        {/* С Layout */}
+        <Route path='/' element={<Layout>
+          <HomePage />
+        </Layout>} />
+
+        <Route path='/admin' element={<Layout>
+          <AdminPage />
+        </Layout>} />
+
+        <Route path='/lessons/:order?' element={<Layout>
+          <CurrentLessonPage />
+        </Layout>} />
       </Routes>
     </Router>
   );

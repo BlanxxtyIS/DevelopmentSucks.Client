@@ -122,7 +122,7 @@ export default function LessonPage() {
                 )}
             </form>
 
-            <hr />
+            <br />
 
             <h2>Список уроков ({lessons.length})</h2>
             {lessons.length === 0 ? (

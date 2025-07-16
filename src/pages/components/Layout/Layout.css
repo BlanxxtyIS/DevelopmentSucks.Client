@@ -1,0 +1,31 @@
+.layout-content {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 20px;
+  margin-left: 220px; /* сдвиг под боковую панель */
+}
+
+.section-title {
+  text-align: center;
+  position: relative;
+  font-size: 1.5em;
+  margin: 40px 0 20px;
+}
+
+.section-title span {
+  background-color: #fff;
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #ccc;
+  z-index: 0;
+}

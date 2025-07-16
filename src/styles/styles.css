@@ -1,38 +1,45 @@
 body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #5D6063; /* приятный серый */
     font-size: 18px;
-    padding-left: 25%;
-    margin-right: 25%;
+    line-height: 1.6;
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 2.0em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Helvetica", "Arial", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
 }
 
 a {
+    color: #3273dc;
     text-decoration: none; /* ссылки не подчеркиваются */
 }
 
 p {
     font-size: 1.1em;
-    padding: 10px;
+    margin-bottom: 1em;
 }
 
 .customButton {
   color: #5D6063;
-  background-color: lightgreen;
+  background-color: #c0f7b3;
   font-weight: bold;
-  padding: 12px;
+  padding: 12px 24px;
   text-align: center;
   border: 2px solid #5D6063;
   border-radius: 5px;
+  cursor: pointer;
 }

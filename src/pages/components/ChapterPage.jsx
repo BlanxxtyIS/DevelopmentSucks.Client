@@ -109,7 +109,7 @@ export default function ChapterPage() {
                 )}
             </form>
 
-            <hr />
+            <br />
             <h2>Список глав ({chapters.length})</h2>
             {chapters.length === 0 ? (
                 <p>Нет глав</p>

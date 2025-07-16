@@ -1,0 +1,28 @@
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 200px;
+  height: calc(100vh - 60px);
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #3273dc;
+}
+.sidebar a:hover {
+  text-decoration: underline;
+}

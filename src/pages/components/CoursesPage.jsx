@@ -93,8 +93,9 @@ export default function CoursesPage() {
                     </button>
                 )}
             </form>
+            
+            <br/>
 
-            <hr />
             <h2>Список курсов ({courses.length})</h2>
             {courses.length === 0 ? (
                 <p>Нет курсов</p>

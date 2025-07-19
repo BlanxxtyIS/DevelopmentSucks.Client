@@ -1,4 +1,6 @@
-const BASE_URL = 'https://localhost:7056/api/lessons';
+
+//const BASE_URL = 'http://localhost:8080/api/lessons';
+const BASE_URL = 'https://localhost/api/lessons';
 
 export async function getAllLessons(token) {
     const response = await fetch(BASE_URL, {

@@ -16,7 +16,8 @@ export default function RefreshToken() {
 
     async function tryRefreshToken() {
         try {
-            const response = await fetch('https://localhost:7056/api/auth/refresh', {
+            //const response = await fetch('http://localhost:8080/api/auth/refresh', {
+            const response = await fetch('https://localhost/api/auth/refresh', {
                 method: 'POST',
                 credentials: 'include' // Важно для отправки cookie
             });

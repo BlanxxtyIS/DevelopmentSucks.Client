@@ -17,7 +17,8 @@ export default function LoginPage() {
     setSuccess(false);
 
     try {
-      const response = await fetch('https://localhost:7056/api/auth/login', {
+      //const response = await fetch('http://localhost:8080/api/auth/login', {
+        const response = await fetch('https://localhost/api/auth/login', {
         method: 'POST',
         mode: 'cors', // явно указываем режим CORS
         headers: {

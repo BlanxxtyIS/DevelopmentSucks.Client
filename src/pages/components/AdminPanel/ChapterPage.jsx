@@ -117,7 +117,7 @@ export default function ChapterPage() {
                 <ul>
                     {chapters.map((chapter) => (
                         <li key={chapter.id}>
-                            <string>{chapter.title}</string>
+                            <string>{chapter.id} ---- {chapter.title}</string>
                             <button 
                                 className='customButton' 
                                 onClick={() => handleEdit(chapter)}>✏️ Редактировать</button>

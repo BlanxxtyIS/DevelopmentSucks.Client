@@ -1,6 +1,7 @@
 import { json } from "react-router-dom";
 
-const BASE_URL = 'https://localhost:7056/api/courses';
+//const BASE_URL = 'http://localhost:8080/api/courses';
+const BASE_URL = 'https://localhost/api/courses';
 
 export async function getAllCourses(token) {
     const response = await fetch(BASE_URL, {

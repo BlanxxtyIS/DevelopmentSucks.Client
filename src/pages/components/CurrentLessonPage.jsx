@@ -6,7 +6,6 @@ export default function CurrentLessonPage() {
     const [lessons, setLessons] = useState([]);
     const {order} = useParams();
     const [currentOrder, setCurrentOrder] = useState(Number(order) || 0);
-    const navigate = useNavigate();
 
     const token = localStorage.getItem('accessToken');
 
@@ -29,12 +28,15 @@ export default function CurrentLessonPage() {
     }, [order]);
 
     if (lessons.length === 0) return <p>Уроков пока нет</p>;
+    if (currentOrder < 0 || currentOrder >= lessons.length) {
+        return <p>Урок не найден</p>;
+    }
 
     const currentLesson = lessons[currentOrder];
 
     return (
         <div>
-            <h1>{currentLesson.title}</h1>
+            <h1>{currentLesson?.title}</h1>
             <div dangerouslySetInnerHTML={{__html: currentLesson.content}} />
             <p><em>Глава ID: {currentLesson.id}</em></p>
 
